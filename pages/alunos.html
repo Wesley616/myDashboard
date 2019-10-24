@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/myDashbord.css">
     </head>
     <div class="wrapper">
 
@@ -239,21 +240,107 @@
                         <div class="col-md-12">
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h3 for="test" class="card-title">Cadastrar aluno</h3>
+                                    <label for="test" class="card-title">
+                                        <h3>Cadastrar aluno</h3>
+                                    </label>
 
-                                    <div  class="card-tools">
-                                        <button id="test" type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i>
+                                    <div class="card-tools">
+                                        <button id="test" type="button" class="btn btn-tool"
+                                            data-card-widget="collapse"><i class="fas fa-minus"></i>
                                         </button>
                                     </div>
                                     <!-- /.card-tools -->
                                 </div>
                                 <!-- /.card-header -->
-                                <div class="card-body">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Nome do aluno</label>
-                                            <input id="nomeAluno" type="text" class="form-control">
+                                <div class=" card-body">
+                                    <form id="formAddAluno">
+                                        <div class="row">
+
+                                            <div class="col-sm-12 col-md-4 col-lg-5">
+                                                <div class="form-group">
+                                                    <label>Nome do aluno</label>
+                                                    <input id="nomeAluno" type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-2 col-lg-1">
+                                                <div class="form-group">
+                                                    <label>1° Bi</label>
+                                                    <input id="nota1bimestre" type="number" class="form-control"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-2 col-lg-1">
+                                                <div class="form-group">
+                                                    <label>2° Bi</label>
+                                                    <input id="nota2bimestre" type="number" class="form-control"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-2 col-lg-1">
+                                                <div class="form-group">
+                                                    <label>3° Bi</label>
+                                                    <input id="nota3bimestre" type="number" class="form-control"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-2 col-lg-1">
+                                                <div class="form-group">
+                                                    <label>4° Bi</label>
+                                                    <input id="nota4bimestre" type="number" class="form-control"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4 col-lg-2">
+                                                <div class="form-group pt-32">
+                                                    <button type="button" class="btn btn-primary"
+                                                        onclick="adicionarAluno()">
+                                                        <i class="fas fa-plus"></i>Adicionar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Lista de Alunos</h3>
+
+                                                    <div class="card-tools">
+                                                        <div class="input-group input-group-sm" style="width: 150px;">
+                                                            <input type="text" name="table_search"
+                                                                class="form-control float-right" placeholder="Search">
+
+                                                            <div class="input-group-append">
+                                                                <button type="submit" class="btn btn-default"><i
+                                                                        class="fas fa-search"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- /.card-header -->
+                                                <div class="card-body table-responsive p-0">
+                                                    <table id="listagemAlunos" class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Aluno</th>
+                                                                <th>1° Bim</th>
+                                                                <th>2° Bim</th>
+                                                                <th>3° Bim</th>
+                                                                <th>4° Bim</th>
+                                                                <th>Media</th>
+                                                                <th>Nota final</th>
+                                                                <th>Situação</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /.card -->
                                         </div>
                                     </div>
                                 </div>
@@ -271,7 +358,7 @@
             </div>
             <!-- /.content -->
         </div>
-        <!-- #endregion.content-wrapper -->
+        <!-- #endregion.conteudo da pagina -->
 
         <!-- #region Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -302,7 +389,8 @@
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../assets/js/adminlte.min.js"></script>
+    <script src="../assets/js/alunos.js"></script>
     <!--#endregion-->
 </body>
 
-</html
+</html>
