@@ -78,7 +78,6 @@ function adicionarAluno()
     
 
     adicionarLinhaNatabela(aluno);
-    adicionarLinhaTotalAlunos();
 
     //Limpar campos de input
     aluno = {};
@@ -176,7 +175,7 @@ function verificarSeExisteValor()
 function deletarLinha(linha) {
     var i = linha.parentNode.parentNode.rowIndex;
     document.querySelector('table').deleteRow(i);
-    toastr.info('Aluno excluido com sucesso');
+    toastr.warning('Aluno excluido com sucesso');s
 }
 function limparForm() 
 {
@@ -225,14 +224,3 @@ function limparForm()
         $( "#nota4bimestre" ).removeClass( "is-invalid" );
     }  
 }
-function adicionarLinhaTotalAlunos() 
-{
-    var i = linha.parentNode.parentNode.rowIndex;
-    document.querySelector('table').deleteRow(i);
-    var num = 0;
-    num = num + 1;
-    var tabela = document.querySelector("table");
-    var tr = tabela.insertRow();
-    tr.innerHTML = 'A tabela tem um total de '+num+' alunos';
-}
-
